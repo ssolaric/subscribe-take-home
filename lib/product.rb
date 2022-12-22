@@ -3,6 +3,10 @@ require_relative "round_tax"
 class Product
   SALES_TAX = 0.1 # exempt: books, food, medical products
   IMPORT_DUTY_TAX = 0.05 # for imported goods, no exemptions
+  # In a real world system, there are some ways to exempt products from a sale tax.
+  # If the models were stored in a database, we can have an additional ProductCategory model which
+  # has a many-to-one relationship with Product. A given product category can be tax exempt or not
+  # and it would decide if a product from this category is tax exempt.
   SALES_TAX_EXEMPTIONS = ["book", "chocolate", "headache pills", "cough syrup"]
 
   attr_reader :name, :price
