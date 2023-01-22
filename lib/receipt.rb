@@ -1,5 +1,4 @@
 class Receipt
-  include Enumerable
   attr_reader :number, :total_taxes, :total_cost
 
   def initialize(number:)
